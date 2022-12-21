@@ -26,7 +26,7 @@ def activationFunctionDerivative(x):
 neuron_count = 20
 
 W = np.random.randint(1, 10, (neuron_count, 35)) / 10
-bias = np.random.randint(1, 10, (20, 1)) / 10
+bias = np.random.randint(1, 10, (neuron_count, 1)) / 10
 
 W_second = np.random.randint(1, 10, (26, neuron_count)) / 10
 bias_second =  np.random.randint(1, 10, (26, 1)) / 10
