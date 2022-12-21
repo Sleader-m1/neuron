@@ -80,10 +80,11 @@ class Neuron:
             files = [f for f in listdir(dir) if isfile(join(dir, f))]
             N += len(files)
             i = 0
-            for file in files:
-                if i % 50 == 0:
+            #for file in files:
+            for i in range(26):
+                if i % 20 == 0:
                     print(f'{i}/{len(files)}')
-                image = Image.open(f'{dir}{file}')
+                image = Image.open(f'{dir}{dir[-2]}1.png')
                 image_array = np.asarray(image).tolist()
 
                 
@@ -128,7 +129,7 @@ class Neuron:
     def getResult(self, letter):
         self.W = json.load(open("weights_100.json", "r"))['W1']
         self.W_second = json.load(open("weights_100.json", "r"))['W2']
-        example = Image.open(f'greyscale/{letter}.png')
+        example = Image.open(f'greyscale/{letter[0]}/{letter}.png')
         example = np.asarray(example).tolist()
         res = []
         for x in example:
@@ -163,5 +164,5 @@ class Neuron:
         plt.show()
         
 neu = Neuron()
-# neu.startLearning()
-print(neu.getResult('a12'))
+#neu.startLearning()
+print(neu.getResult('a1'))

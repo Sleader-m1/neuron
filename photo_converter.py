@@ -3,6 +3,6 @@ alphabet =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 for abc in alphabet:
     for i in range(20):
         a = i + 1
-        img = Image.open(f'last_photo/{abc}{a}.png').convert('L')
-        img.save(f'greyscale/{abc}{a}.png')
+        img = Image.open(f'greyscale/{abc}/{abc}{a}.png').convert('L')
+        img.save(f'greyscale/{abc}/{abc}{a}.png')
 
